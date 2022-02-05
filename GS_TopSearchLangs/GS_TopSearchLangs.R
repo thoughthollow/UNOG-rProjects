@@ -13,10 +13,6 @@ df <- read.csv("yourfilenameforimporting.csv")
 #rename the 3 columns
 names(df) <- c("search_string", "no_of_searches", "no_of_results_per_search")
 
-df <- mutate(df,  cld2_Lang = cld2::detect_language(search_string, lang_code = FALSE))
-df <- mutate(df, string_char_length = nchar(df$search_string))
-df <- mutate(df, no_of_words = str_count(df$search_string, "\\w+"))
-
 #detect the search language and add a column
 df <- mutate(df,  cld2_Lang = cld2::detect_language(search_string, lang_code = FALSE)) %>%
 
