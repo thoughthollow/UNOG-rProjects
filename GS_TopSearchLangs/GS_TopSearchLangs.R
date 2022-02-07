@@ -29,7 +29,7 @@ df <- mutate(df,  cld2_Lang = cld2::detect_language(search_string, lang_code = F
 #df <- mutate(df, no_of_words = str_count(df$search_string, "\\w+"))
 
 #exort as csv, with  the datetime in the filename
-write.csv(df, paste0("GS_TopLangs_exported_", format(Sys.time(), "%Y-%m-%d_%H.%M"), ".csv"), row_names = FALSE)
+write.csv(df, paste0("GS_TopLangs_exported_", format(Sys.time(), "%Y-%m-%d_%H.%M"), ".csv"), row.names = FALSE)
 
 #Note: By default the write.csv function overwrites data if a file with the same name exists already.
 #You can use write.table to avoid overwriting, like so:
